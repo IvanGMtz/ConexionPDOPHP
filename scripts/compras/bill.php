@@ -1,10 +1,11 @@
 <?php
 
 namespace app\bill;
+ 
+use getInstance as get;
 
 class bill{
-    function __construct()
-    {
-        echo "Nombre". __CLASS__;
+    use get;
+    function __construct(public $nombre,  public $productos, public $monto,public $cantidad){
     }
 }

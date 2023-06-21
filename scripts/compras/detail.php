@@ -2,17 +2,10 @@
 
 namespace app\detail;
 
+use getInstance as get;
+
 class detail
 {
-    static $getinstance;
+    use get;
     function __construct(public $nombre, public $edad){}
-    static function getInstance()
-    {
-        $arg = (array) func_get_args()[0];
-        if(!self::$getinstance instanceof self){
-            self::$getinstance = new self(...$arg);
-            return self::$getinstance;
-        }
-        return self::$getinstance;
-    }
 }
